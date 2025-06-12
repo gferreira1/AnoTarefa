@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Bloco com Subtarefas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>📝 AnoTarefa</h1>
+      <button id="temaBtn" onclick="alternarTema()">🌓</button>
+      <div class="tabs">
+        <button onclick="trocarAba('tarefas')" id="btn-tarefas" class="ativo">Tarefas</button>
+        <button onclick="trocarAba('compras')" id="btn-compras">Compras</button>
+      </div>
+    </header>
+
+    <input type="text" id="busca" placeholder="🔍 Buscar item..." oninput="filtrar()" />
+
+    <main>
+      <section id="tarefas" class="aba ativa">
+        <div class="input-box">
+          <input type="text" id="tarefaInput" placeholder="Escreva uma tarefa..." />
+          <select id="prioridadeTarefa">
+            <option value="2">Média</option>
+            <option value="1">Alta</option>
+            <option value="3">Baixa</option>
+          </select>
+          <button onclick="adicionar('tarefa')">+</button>
+        </div>
+        <div id="listaTarefas" class="lista"></div>
+      </section>
+
+      <section id="compras" class="aba">
+        <div class="input-box">
+          <input type="text" id="compraInput" placeholder="Escreva um item de compra..." />
+          <select id="prioridadeCompra">
+            <option value="2">Média</option>
+            <option value="1">Alta</option>
+            <option value="3">Baixa</option>
+          </select>
+          <button onclick="adicionar('compra')">+</button>
+        </div>
+        <div id="listaCompras" class="lista"></div>
+      </section>
+    </main>
+  </div>
+
+<footer class="footer-fixo">
+  <button onclick="trocarAba('tarefas')">+ </button>
+
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
